@@ -13,15 +13,17 @@ public class Domino{
 	
 	public Ficha getFicha(int lado1, int lado2)
 	{
-		for(Ficha f : fichas)
+		if(lado1 <= 6 && lado1 >= 0 && lado2 <= 6 && lado2 >= 0)
 		{
-			if(f.getLado1() == lado1 && f.getLado2() == lado2 ||
-				f.getLado2() == lado1 && f.getLado1() == lado2)
+			for(Ficha f : fichas)
 			{
-				return f;
+				if(f.getLado1() == lado1 && f.getLado2() == lado2 ||
+					f.getLado2() == lado1 && f.getLado1() == lado2)
+				{
+					return f;
+				}
 			}
 		}
-
-		return new Ficha(0, 0);
+		return null;
 	}
 }
