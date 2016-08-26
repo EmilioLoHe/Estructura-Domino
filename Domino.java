@@ -10,4 +10,18 @@ public class Domino{
 			for(int j = 0; j <= i; j++, k++)
 				fichas[k] = new Ficha(j, i);
 	}
+	
+	public Ficha getFicha(int lado1, int lado2)
+	{
+		for(Ficha f : fichas)
+		{
+			if(f.getLado1() == lado1 && f.getLado2() == lado2 ||
+				f.getLado2() == lado1 && f.getLado1() == lado2)
+			{
+				return f;
+			}
+		}
+
+		return new Ficha(0, 0);
+	}
 }
