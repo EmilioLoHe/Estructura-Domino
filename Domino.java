@@ -11,6 +11,8 @@ public class Domino{
 				fichas[k] = new Ficha(j, i);
 	}
 	
+	public Ficha[] getDomino(){ return fichas; }
+	
 	public Ficha getFicha(int lado1, int lado2)
 	{
 		if(lado1 <= 6 && lado1 >= 0 && lado2 <= 6 && lado2 >= 0)
